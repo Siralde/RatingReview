@@ -1,0 +1,11 @@
+.BuyButton{
+    border-style: solid;
+    border-color: #0aff21;
+    font-size: 20px;
+}
+
+.AddCarButton{
+    border-style: solid;
+    border-color: #3053ff;
+    font-size: 20px;
+}
