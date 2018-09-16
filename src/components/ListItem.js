@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+// Components
+// import Slider from '../containers/Slider'
+
+import SlideShow from './SlideShow';
+
 // Dumb Components
 import NameBox from './NameBox';
 import PriceBox from './PriceBox';
@@ -15,9 +20,12 @@ class ListItem extends Component {
 
         return (
             <div>
-                <div >
-                    {/*<img />*/}
-                </div>
+                {/*<Slider*/}
+                    {/*images={this.props.product.images}*/}
+                {/*/>*/}
+
+                <SlideShow/>
+
 
                 <NameBox
                     name={this.props.product.name}
