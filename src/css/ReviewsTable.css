@@ -1,0 +1,31 @@
+.ver-minimalist
+{
+    font-size: 80px;
+    margin: 45px;
+    width: 480px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.ver-minimalist thead
+{
+    border-bottom: 10px solid #1d33bb;
+}
+
+.ver-minimalist th
+{
+    padding: 8px 2px;
+    font-weight: bolder;
+    font-size: 30px;
+    border-bottom: 2px solid #bb0f13;
+    border-right: 30px solid #bb0f13;
+    border-left: 30px solid #ff3253;
+    /*color: #039;*/
+}
+.ver-minimalist td
+{
+    padding: 12px 2px 0px 2px;
+    border-right: 30px solid #ff3750;
+    border-left: 30px solid #ff1f50;
+    /*color: #669;*/
+}

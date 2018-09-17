@@ -46,8 +46,9 @@ class SpecificBoxes extends Component {
                     Review
                 </button>
                 <div>
-                    {this.state.review === true ? <ReviewBox/> : <SpecsBox/>}
+                    {this.state.review === true ? <ReviewBox product={this.props.product}/> : <SpecsBox/>}
                 </div>
+
             </div>
         );
     }

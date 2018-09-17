@@ -5,6 +5,26 @@ export default () => ({
             "name": "Iphone 7",
             "price": 50,
             "rating": 5,
+            "reviews": [
+                {
+                    "reviewValue": "Very Nice",
+                    "reviewRating": 4,
+                    "reviewAuthor": "Sergio",
+                    "reviewDate": "30/12/2018"
+                },
+                {
+                    "reviewValue": "Wonderful",
+                    "reviewRating": 4,
+                    "reviewAuthor": "Page",
+                    "reviewDate": "28/11/2018"
+                },
+                {
+                    "reviewValue": "Great",
+                    "reviewRating": 5,
+                    "reviewAuthor": "Kenya",
+                    "reviewDate": "28/05/2017"
+                }
+            ],
             "images": [
                 {
                     "url": "https://i.ytimg.com/vi/MxwjEacvrtY/hqdefault.jpg"

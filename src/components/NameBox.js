@@ -10,7 +10,6 @@ class NameBox extends Component {
                 className={'Name'}
                 onClick={this.props.selected.bind(this, this.props.id)}
             >
-                {this.props.id}
                 {this.props.name}
             </div>
         );

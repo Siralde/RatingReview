@@ -73,7 +73,7 @@ class App extends Component {
                         GO BACK
                     </button>
 
-                    <SpecificBoxes/>
+                    <SpecificBoxes product={selectedProduct}/>
 
                 </div>
             )
