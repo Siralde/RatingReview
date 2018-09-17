@@ -1,7 +1,39 @@
 import React, { Component } from 'react';
 import '../css/SlideShow.css'
 
+var hasOwn = {}.hasOwnProperty;
 
+function classNames () {
+    var classes = '';
+
+    for (var i = 0; i < arguments.length; i++)
+    {
+        var arg = arguments[i];
+        if (!arg) continue;
+
+        var argType = typeof arg;
+
+        if (argType === 'string' || argType === 'number')
+        {
+            classes += ' ' + arg;
+        }
+        else if (Array.isArray(arg))
+        {
+            classes += ' ' + classNames.apply(null, arg);
+        }
+        else if (argType === 'object')
+        {
+            for (var key in arg)
+            {
+                if (hasOwn.call(arg, key) && arg[key])
+                {
+                    classes += ' ' + key;
+                }
+            }
+        }
+    }
+    return classes.substr(1);
+}
 
 export default class SlideShow extends Component {
     constructor() {
@@ -19,35 +51,37 @@ export default class SlideShow extends Component {
 
     render() {
 
-        let slides = [{
-            imageUrl: "https://raw.githubusercontent.com/DZuz14/React-Image-Viewer/master/dist/img/oriens-belt.jpg",
-            caption: "Allan Allan Al Al Allan"
-        },
-            {
-            imageUrl: "https://pbs.twimg.com/profile_images/2576554888/s8vftzr3j0a9r703xdfn.jpeg",
-            caption: "Steve Steve Steve"
-        }];
 
         return (
             <div className="slideshow">
+
                 <ul className="slideshow-slides">
                     {
-                        // this.props.slides.map((slide, index) => (
-                        slides.map((slide, index) => (
-                            <li >
-                                <figure>
-                                    <img src={ slide.imageUrl } />
-                                    { slide.caption ? <figcaption>{ slide.caption }</figcaption> : null }
-                                </figure>
-                            </li>
+                        this.props.images.map((slide, index) => (
+
+                        <li className={ classNames({ active: index === this.state.activeIndex }) }>
+                            <figure>
+                                <img
+                                    src={slide.url}
+                                    alt={"Hello"}
+                                />
+                            </figure>
+                        </li>
+
                         ))
                     }
+
                 </ul>
+
                 <ul className="slideshow-dots">
                     {
-                        slides.map((slide, index) => (
+                        this.props.images.map((slide, index) => (
                             <li className={ (index === this.state.activeIndex) ? 'active': '' }>
-                                <a onClick={ (event)=> this.jumpToSlide(index) }>{ index + 1 }</a>
+                                <a
+                                    onClick={ (event)=> this.jumpToSlide(index) }
+                                >
+                                    { index + 1 }
+                                </a>
                             </li>
                         ))
                     }

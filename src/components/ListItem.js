@@ -24,8 +24,9 @@ class ListItem extends Component {
                     {/*images={this.props.product.images}*/}
                 {/*/>*/}
 
-                <SlideShow/>
-
+                <SlideShow
+                    images={this.props.product.images}
+                />
 
                 <NameBox
                     name={this.props.product.name}

@@ -7,10 +7,13 @@ export default () => ({
             "rating": 5,
             "images": [
                 {
-                    "url": "https://github.com/DZuz14/React-Image-Viewer/blob/master/dist/img/aurora.jpg"
+                    "url": "https://i.ytimg.com/vi/MxwjEacvrtY/hqdefault.jpg"
                 },
                 {
-                    "url": "https://github.com/DZuz14/React-Image-Viewer/blob/master/dist/img/galaxies.jpg"
+                    "url": "https://pbs.twimg.com/profile_images/2576554888/s8vftzr3j0a9r703xdfn.jpeg"
+                },
+                {
+                    "url": "https://i.ytimg.com/vi/MxwjEacvrtY/hqdefault.jpg"
                 }
             ]
         },
