@@ -45,20 +45,7 @@ class SpecificBoxes extends Component {
         });
     }
 
-
-
     render() {
-
-        // let window = () =>{
-        //     if (this.state.review === true){
-        //         return
-        //     }
-        //     else if (this.state.specs === true)
-        //     {
-        //
-        //     }
-        // };
-
 
         return (
             <div>
@@ -79,10 +66,7 @@ class SpecificBoxes extends Component {
                 </button>
                 <div>
                     {this.state.review === true ? <ReviewBox product={this.props.product}/> : (this.state.specs === true ? <SpecsBox product={this.props.product}/> : <CapacityBox product={this.props.product}/>)}
-
-                    {/*{this.state.review === true ? <ReviewBox product={this.props.product}/> : <SpecsBox product={this.props.product}/>}*/}
                 </div>
-                {/*{this.state.review === true ? <ReviewBox product={this.props.product}/> : (this.state.specs === true ? <SpecsBox product={this.props.product}/> : <CapacityBox product={this.props.product}/>)}*/}
             </div>
         );
     }
