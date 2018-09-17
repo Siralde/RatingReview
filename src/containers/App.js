@@ -4,7 +4,10 @@ import '../css/App.css';
 import products from '../products.js';
 // Dumb Components
 import List from '../components/List';
+
+//Statefull Components
 import SlideShow from './SlideShow';
+import SpecificBoxes from './SpecificBoxes';
 
 class App extends Component {
 
@@ -69,6 +72,8 @@ class App extends Component {
                     >
                         GO BACK
                     </button>
+
+                    <SpecificBoxes/>
 
                 </div>
             )
