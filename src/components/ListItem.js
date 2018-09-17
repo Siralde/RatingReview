@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
 // Components
-// import Slider from '../containers/Slider'
 
-import SlideShow from './SlideShow';
+import SlideShow from '../containers/SlideShow';
 
 // Dumb Components
 import NameBox from './NameBox';
@@ -20,27 +19,36 @@ class ListItem extends Component {
 
         return (
             <div>
-                {/*<Slider*/}
-                    {/*images={this.props.product.images}*/}
-                {/*/>*/}
 
                 <SlideShow
+                    id={this.props.product.id}
                     images={this.props.product.images}
+                    selected={this.props.selected}
+                    onDemand={this.props.onDemand}
                 />
 
                 <NameBox
+                    id={this.props.product.id}
                     name={this.props.product.name}
+                    selected={this.props.selected}
                 />
 
                 <PriceBox
+                    id={this.props.product.id}
                     price={this.props.product.price}
+                    selected={this.props.selected}
                 />
 
                 <RatingBox
+                    id={this.props.product.id}
                     rating={this.props.product.rating}
+                    selected={this.props.selected}
                 />
 
-                <MoreInfo/>
+                <MoreInfo
+                    id={this.props.product.id}
+                    selected={this.props.selected}
+                />
 
                 <div className={'BuyButton'}>
                     BUY

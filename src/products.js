@@ -1,7 +1,7 @@
 export default () => ({
     "data": [
         {
-            "id": 1,
+            "id": 0,
             "name": "Iphone 7",
             "price": 50,
             "rating": 5,
@@ -18,7 +18,7 @@ export default () => ({
             ]
         },
         {
-            "id": 2,
+            "id": 1,
             "name": "second",
             "price": 45,
             "rating": 4,

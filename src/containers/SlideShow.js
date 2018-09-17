@@ -59,7 +59,11 @@ export default class SlideShow extends Component {
                     {
                         this.props.images.map((slide, index) => (
 
-                        <li className={ classNames({ active: index === this.state.activeIndex }) }>
+                        <li
+                            key={index}
+                            className={ classNames({ active: index === this.state.activeIndex }) }
+                            onClick={this.props.onDemand === false ? this.props.selected.bind(this, this.props.id) : null}
+                        >
                             <figure>
                                 <img
                                     src={slide.url}
@@ -76,7 +80,10 @@ export default class SlideShow extends Component {
                 <ul className="slideshow-dots">
                     {
                         this.props.images.map((slide, index) => (
-                            <li className={ (index === this.state.activeIndex) ? 'active': '' }>
+                            <li
+                                className={ (index === this.state.activeIndex) ? 'active': '' }
+                                key={index}
+                            >
                                 <a
                                     onClick={ (event)=> this.jumpToSlide(index) }
                                 >

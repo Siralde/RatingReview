@@ -6,7 +6,10 @@ import '../css/PriceBox.css';
 class PriceBox extends Component {
     render() {
         return (
-            <div className={'Price'}>
+            <div
+                className={'Price'}
+                onClick={this.props.selected.bind(this, this.props.id)}
+            >
                 {this.props.price}
             </div>
         );
