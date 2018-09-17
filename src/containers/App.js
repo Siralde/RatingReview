@@ -9,6 +9,7 @@ import List from '../components/List';
 import SlideShow from './SlideShow';
 import SpecificBoxes from './SpecificBoxes';
 
+
 class App extends Component {
 
     constructor(props) {
@@ -66,6 +67,18 @@ class App extends Component {
                         images={selectedProduct.images}
                         onDemand={this.state.selected}
                     />
+
+                    <div>
+                        {selectedProduct.name}
+                    </div>
+
+                    <div>
+                        {selectedProduct.price}
+                    </div>
+
+                    <div>
+                        {selectedProduct.rating}
+                    </div>
 
                     <button
                         onClick={this.handleToList}

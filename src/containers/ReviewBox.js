@@ -7,13 +7,15 @@ class ReviewBox extends Component {
         super(props);
         this.state = {
             reviewValue: '',
-            scoreValue: 0,
+            scoreValue: 5,
             authorName: '',
             dateValue: '',
+            reviews: this.props.product.reviews
         };
         this.handleReviewValue = this.handleReviewValue.bind(this);
         this.handleAuthorValue = this.handleAuthorValue.bind(this);
         this.handleDateValue = this.handleDateValue.bind(this);
+        this.handleScoreValue = this.handleScoreValue.bind(this);
         this.handleNewReview = this.handleNewReview.bind(this);
         this.handleCancelReview = this.handleCancelReview.bind(this);
     }
@@ -43,12 +45,35 @@ class ReviewBox extends Component {
 
     handleNewReview(){
 
+        console.log(this.state.dateValue);
+        console.log(this.state.reviewValue);
+        console.log(this.state.scoreValue);
+        console.log(this.state.authorName);
+
+        const newReview = {
+            "reviewValue": this.state.reviewValue,
+            "reviewRating": this.state.scoreValue,
+            "reviewAuthor": this.state.authorName,
+            "reviewDate": this.state.dateValue
+        };
+
+
+        let newReviews = this.props.product.reviews.concat(newReview);
+
+        this.setState({
+            reviewValue: '',
+            scoreValue: 5,
+            authorName: '',
+            dateValue: '',
+            reviews: newReviews
+        })
+
     }
 
     handleCancelReview(){
         this.setState({
             reviewValue: '',
-            scoreValue: 0,
+            scoreValue: 5,
             authorName: '',
             dateValue: '',
         })
@@ -56,16 +81,13 @@ class ReviewBox extends Component {
 
 
     render() {
-
-        const reviews = this.props.product.reviews;
-
         return (
             <div>
-                Review
+                <ListReviews reviews={this.state.reviews}/>
 
                 <input
                     type="text"
-                    value={this.state.dateValue}
+                    value={this.state.reviewValue}
                     onChange={this.handleReviewValue}
                     placeholder={"Review"}
                 />
@@ -79,17 +101,18 @@ class ReviewBox extends Component {
                 />
 
                 <input
-                    type="text"
+                    type="date"
                     value={this.state.dateValue}
                     onChange={this.handleDateValue}
                     placeholder={"DD/MM/AAAA"}
                 />
 
                 <input
-                    type="text"
+                    type="number"
+                    min="1"
+                    max="5"
                     value={this.state.scoreValue}
                     onChange={this.handleScoreValue}
-                    placeholder={"Score"}
                 />
 
                 <button
@@ -103,8 +126,6 @@ class ReviewBox extends Component {
                 >
                     Cancel
                 </button>
-
-                <ListReviews reviews={reviews}/>
 
             </div>
         );
