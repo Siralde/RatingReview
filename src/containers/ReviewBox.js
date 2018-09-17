@@ -3,7 +3,7 @@ import ListReviews from '../components/ListReviews';
 
 class ReviewBox extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             reviewValue: '',
@@ -14,8 +14,9 @@ class ReviewBox extends Component {
         this.handleReviewValue = this.handleReviewValue.bind(this);
         this.handleAuthorValue = this.handleAuthorValue.bind(this);
         this.handleDateValue = this.handleDateValue.bind(this);
-
-    };
+        this.handleNewReview = this.handleNewReview.bind(this);
+        this.handleCancelReview = this.handleCancelReview.bind(this);
+    }
 
     handleReviewValue(event){
         this.setState({
@@ -39,6 +40,20 @@ class ReviewBox extends Component {
             scoreValue: event.target.value
         })
     }
+
+    handleNewReview(){
+
+    }
+
+    handleCancelReview(){
+        this.setState({
+            reviewValue: '',
+            scoreValue: 0,
+            authorName: '',
+            dateValue: '',
+        })
+    }
+
 
     render() {
 
@@ -76,6 +91,18 @@ class ReviewBox extends Component {
                     onChange={this.handleScoreValue}
                     placeholder={"Score"}
                 />
+
+                <button
+                    onClick={this.handleNewReview}
+                >
+                    Add Review
+                </button>
+
+                <button
+                    onClick={this.handleCancelReview}
+                >
+                    Cancel
+                </button>
 
                 <ListReviews reviews={reviews}/>
 
