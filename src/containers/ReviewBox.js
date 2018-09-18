@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListReviews from '../components/ListReviews';
+import moment from 'moment'
 
 class ReviewBox extends Component {
 
@@ -14,7 +15,6 @@ class ReviewBox extends Component {
         };
         this.handleReviewValue = this.handleReviewValue.bind(this);
         this.handleAuthorValue = this.handleAuthorValue.bind(this);
-        this.handleDateValue = this.handleDateValue.bind(this);
         this.handleScoreValue = this.handleScoreValue.bind(this);
         this.handleNewReview = this.handleNewReview.bind(this);
         this.handleCancelReview = this.handleCancelReview.bind(this);
@@ -31,11 +31,6 @@ class ReviewBox extends Component {
             authorName: event.target.value
         })
     }
-    handleDateValue(event){
-        this.setState({
-            dateValue: event.target.value
-        })
-    }
 
     handleScoreValue(event){
         this.setState({
@@ -45,18 +40,14 @@ class ReviewBox extends Component {
 
     handleNewReview(){
 
-        console.log(this.state.dateValue);
-        console.log(this.state.reviewValue);
-        console.log(this.state.scoreValue);
-        console.log(this.state.authorName);
+        let dateReview = moment().format("DD/MM/YYYY");
 
         const newReview = {
             "reviewValue": this.state.reviewValue,
             "reviewRating": this.state.scoreValue,
             "reviewAuthor": this.state.authorName,
-            "reviewDate": this.state.dateValue
+            "reviewDate": dateReview
         };
-
 
         // let newReviews = this.props.product.reviews.concat(newReview);
 
@@ -64,7 +55,7 @@ class ReviewBox extends Component {
             reviewValue: '',
             scoreValue: 5,
             authorName: '',
-            dateValue: '',
+            dateValue: dateReview,
             reviews: [newReview, ...prevState.reviews]
         }))
 
@@ -100,12 +91,12 @@ class ReviewBox extends Component {
                     placeholder={"Author Name"}
                 />
 
-                <input
-                    type="date"
-                    value={this.state.dateValue}
-                    onChange={this.handleDateValue}
-                    placeholder={"DD/MM/AAAA"}
-                />
+                {/*<input*/}
+                    {/*type="date"*/}
+                    {/*value={this.state.dateValue}*/}
+                    {/*onChange={this.handleDateValue}*/}
+                    {/*placeholder={"DD/MM/AAAA"}*/}
+                {/*/>*/}
 
                 <input
                     type="number"
