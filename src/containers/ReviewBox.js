@@ -58,15 +58,15 @@ class ReviewBox extends Component {
         };
 
 
-        let newReviews = this.props.product.reviews.concat(newReview);
+        // let newReviews = this.props.product.reviews.concat(newReview);
 
-        this.setState({
+        this.setState(prevState => ({
             reviewValue: '',
             scoreValue: 5,
             authorName: '',
             dateValue: '',
-            reviews: newReviews
-        })
+            reviews: [newReview, ...prevState.reviews]
+        }))
 
     }
 
