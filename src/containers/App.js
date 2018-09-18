@@ -86,8 +86,8 @@ class App extends Component {
                         GO BACK
                     </button>
 
-                    <SlideShow
-                    />
+                    {/*<SlideShow*/}
+                    {/*/>*/}
 
                     <SpecificBoxes product={selectedProduct}/>
 
