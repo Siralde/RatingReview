@@ -4,25 +4,25 @@ export default () => ({
             "id": 0,
             "name": "Iphone 7",
             "price": 50,
-            "rating": 5,
+            "rating": 0,
             "specs": "Specs Text",
             "capacity": "Capacity Text",
             "reviews": [
                 {
                     "reviewValue": "Very Nice",
-                    "reviewRating": 4,
+                    "reviewRating": 1,
                     "reviewAuthor": "Sergio",
                     "reviewDate": "30/12/2018"
                 },
                 {
                     "reviewValue": "Wonderful",
-                    "reviewRating": 4,
+                    "reviewRating": 2,
                     "reviewAuthor": "Page",
                     "reviewDate": "28/11/2018"
                 },
                 {
                     "reviewValue": "Great",
-                    "reviewRating": 5,
+                    "reviewRating": 3,
                     "reviewAuthor": "Kenya",
                     "reviewDate": "28/05/2017"
                 }
@@ -85,19 +85,19 @@ export default () => ({
             "reviews": [
                 {
                     "reviewValue": "Very Nice",
-                    "reviewRating": 4,
+                    "reviewRating": 2,
                     "reviewAuthor": "Sergio",
                     "reviewDate": "30/12/2018"
                 },
                 {
                     "reviewValue": "Wonderful",
-                    "reviewRating": 4,
+                    "reviewRating": 2,
                     "reviewAuthor": "Page",
                     "reviewDate": "28/11/2018"
                 },
                 {
                     "reviewValue": "Great",
-                    "reviewRating": 5,
+                    "reviewRating": 2,
                     "reviewAuthor": "Kenya",
                     "reviewDate": "28/05/2017"
                 }

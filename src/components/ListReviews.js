@@ -27,12 +27,12 @@ class ListReviews extends Component {
             <div>
                 <table className={'ver-minimalist'}>
 
-                    <thead>
-                        {/*<tr>*/}
-                            {/*<th>Titulo</th>*/}
-                        {/*</tr>*/}
-                        Reviews
-                    </thead>
+                    {/*<thead>*/}
+                        {/*/!*<tr>*!/*/}
+                            {/*/!*<th>Titulo</th>*!/*/}
+                        {/*/!*</tr>*!/*/}
+                        {/*Reviews*/}
+                    {/*</thead>*/}
 
                     <tbody >
                         {fila}

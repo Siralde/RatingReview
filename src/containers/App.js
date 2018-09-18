@@ -15,6 +15,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            product: products().data,
             selected: false,
             id: 0
         };
@@ -22,6 +23,30 @@ class App extends Component {
         this.handleToList = this.handleToList.bind(this);
 
     } // Fin del constructor
+
+    componentWillMount() {
+
+        let product = this.state.product;
+
+        let x = 0;
+        let i, j;
+        let media;
+        let integer;
+
+        for(i = 0; i < product.length; i++) {
+            for(j = 0; j < product[i].reviews.length; j++){
+                x = x + product[i].reviews[j].reviewRating;
+            }
+            media = x/j+1;
+            integer = parseInt(media, 10);
+            product[i].rating = integer;
+            x = 0;
+        }
+
+        this.setState({
+            product
+        });
+    }
 
     handleClick(id){
 
@@ -42,9 +67,12 @@ class App extends Component {
 
     render() {
 
-        const product = products().data;
+        // const product = products().data;
 
+        const product = this.state.product;
         const selectedProduct = product[this.state.id];
+
+
 
         if (this.state.selected === false)
         {

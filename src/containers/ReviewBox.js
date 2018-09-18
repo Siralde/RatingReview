@@ -8,9 +8,8 @@ class ReviewBox extends Component {
         super(props);
         this.state = {
             reviewValue: '',
-            scoreValue: 5,
+            ratingValue: 5,
             authorName: '',
-            dateValue: '',
             reviews: this.props.product.reviews
         };
         this.handleReviewValue = this.handleReviewValue.bind(this);
@@ -34,7 +33,7 @@ class ReviewBox extends Component {
 
     handleScoreValue(event){
         this.setState({
-            scoreValue: event.target.value
+            ratingValue: event.target.value
         })
     }
 
@@ -44,18 +43,15 @@ class ReviewBox extends Component {
 
         const newReview = {
             "reviewValue": this.state.reviewValue,
-            "reviewRating": this.state.scoreValue,
+            "reviewRating": this.state.ratingValue,
             "reviewAuthor": this.state.authorName,
             "reviewDate": dateReview
         };
 
-        // let newReviews = this.props.product.reviews.concat(newReview);
-
         this.setState(prevState => ({
             reviewValue: '',
-            scoreValue: 5,
+            ratingValue: 5,
             authorName: '',
-            dateValue: dateReview,
             reviews: [newReview, ...prevState.reviews]
         }))
 
@@ -64,14 +60,13 @@ class ReviewBox extends Component {
     handleCancelReview(){
         this.setState({
             reviewValue: '',
-            scoreValue: 5,
+            ratingValue: 5,
             authorName: '',
-            dateValue: '',
         })
     }
 
-
     render() {
+
         return (
             <div>
                 <ListReviews reviews={this.state.reviews}/>
@@ -91,18 +86,11 @@ class ReviewBox extends Component {
                     placeholder={"Author Name"}
                 />
 
-                {/*<input*/}
-                    {/*type="date"*/}
-                    {/*value={this.state.dateValue}*/}
-                    {/*onChange={this.handleDateValue}*/}
-                    {/*placeholder={"DD/MM/AAAA"}*/}
-                {/*/>*/}
-
                 <input
                     type="number"
                     min="1"
                     max="5"
-                    value={this.state.scoreValue}
+                    value={this.state.ratingValue}
                     onChange={this.handleScoreValue}
                 />
 
